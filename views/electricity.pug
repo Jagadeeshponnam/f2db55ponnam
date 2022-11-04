@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1= title
+  - var results = electricity;
+  div(class="container-fluid")
+    each item,index in results 
+      div(class="row" ,onclick=`buy(${index})`)
+        div(class="col-sm-2") #{item.Edistributor_Name}
+        div(class="col-sm-2") #{item.electricity_gen}
+        div(class="col-sm-2") #{item.elctricity_type}
+
+  script. 
+        function buy(price){
+          alert('You purchased item ' + price)
+
+        }
+
+
+  
+
