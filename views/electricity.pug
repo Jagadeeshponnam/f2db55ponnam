@@ -2,9 +2,9 @@ extends layout
 
 block content
   h1= title
-  - var results = electricity;
+  - var electricity = results;
   div(class="container-fluid")
-    each item,index in results 
+    each item,index in electricity 
       div(class="row" ,onclick=`buy(${index})`)
         div(class="col-sm-2") #{item.Edistributor_Name}
         div(class="col-sm-2") #{item.electricity_gen}

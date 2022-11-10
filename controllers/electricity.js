@@ -10,7 +10,7 @@ exports.electricity_list = async function(req, res) {
         res.send(`{"error": ${err}}`); 
     }
 };
-// for a specific machine.
+// for a specific electricity.
 exports.electricity_detail = function(req, res) {
 res.send('NOT IMPLEMENTED: electricity detail: ' + req.params.id);
 };
