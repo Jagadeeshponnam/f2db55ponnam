@@ -100,4 +100,18 @@ exports.electricity_delete = async function(req, res) {
     res.status(500)
     res.send(`{"error": Error deleting ${err}}`);
     }
-   }
+};
+
+// Handle a show one view with id specified by query
+exports.electricity_view_one_Page = async function(req, res) {
+    console.log("single view for id " + req.query.id)
+    try{
+    results = await electricity.findById( req.query.id)
+    res.render('electricitydetail',
+   { title: 'Electricity Detail', toShow: results });
+    }
+    catch(err){
+    res.status(500)
+    res.send(`{'error': '${err}'}`);
+    }
+};
