@@ -8,4 +8,10 @@ router.get('/', electricity_controlers.electricity_view_all_Page);
 /* GET detail electricity page */
 router.get('/detail', electricity_controlers.electricity_view_one_Page);
 
+/* GET create electricity page */
+router.get('/create', electricity_controlers.electricity_create_Page);
+
+/* GET create update page */
+router.get('/update', electricity_controlers.electricity_update_Page);
+
 module.exports = router;

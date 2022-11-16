@@ -1,0 +1,31 @@
+extends layout
+block content
+ h1= title
+ form(id='electricityForm', action="/resource/electricity", method="POST")
+  div.form-group
+   label.electricityAttr(for='Edistributor_Name') Electricity Name
+   input#Edistributor_Name(type='String', name='Edistributor_Name')
+  div.form-group
+   label.electricityAttr(for='electricity_gen') Electricity gen
+   input#electricity_gen(type='number', name='electricity_gen')
+  div.form-group
+   label.electricityAttr(for='elctricity_type') Electricity type
+   input#elctricity_type(type='String', name='elctricity_type')
+  input(type="submit")
+ script.
+  document.forms['electricityForm'].addEventListener('submit', (event) => {
+   event.preventDefault();
+   // TODO do something here to show user that form is being submitted
+   fetch(event.target.action, {
+    method: 'POST',
+    body: new URLSearchParams(new FormData(event.target)) // event.target is the form
+   }).then((resp) => {
+    return resp.json(); // or resp.text() or whatever the server sends
+   }).then((body) => {
+    alert("Save succeded")
+    // TODO handle body
+   }).catch((error) => {
+    // TODO handle error
+    alert("Save failed " + error )
+   });
+   });
