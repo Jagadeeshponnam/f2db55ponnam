@@ -14,4 +14,7 @@ router.get('/create', electricity_controlers.electricity_create_Page);
 /* GET create update page */
 router.get('/update', electricity_controlers.electricity_update_Page);
 
+/* GET delete electricity page */
+router.get('/delete', electricity_controlers.electricity_delete_Page);
+
 module.exports = router;
