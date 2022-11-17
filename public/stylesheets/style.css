@@ -11,3 +11,19 @@ a {
   background-color: aquamarine;
   width: 120px;
 }
+
+.style {
+  background-color: lightcyan;
+  padding: 100;
+  font: 12px "Times New Roman", Times, serif;
+  font-size: 30px;
+  width: 100;
+}
+
+.title {
+  text-decoration-line: overline;
+  color: chocolate;
+  background-color: beige;
+}
+
+

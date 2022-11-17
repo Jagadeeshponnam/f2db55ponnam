@@ -9,7 +9,7 @@ block content
     - let electricityid = toShow._id 
     - let Edistributor_Name = toShow.Edistributor_Name
     - let electricity_gen = toShow.electricity_gen
-    - let elctricity_type = toShow.elctricity_type
+    - let electricity_type = toShow.electricity_type
     - let actionid = "/resource/electricity/" + electricityid 
     script let actionid = "#{actionid}" 
     div 
@@ -24,7 +24,7 @@ block content
         div #{electricity_gen} 
       div.row 
         div(class='electricityAttr mr-3') Electricity Type is: 
-        div #{elctricity_type} 
+        div #{electricity_type} 
  
     button(class="btn btn-danger m-2" onclick="deleteOnid()") Delete 
     button(class="btn btn-secondary m-2" onclick="cancel()") Cancel 
