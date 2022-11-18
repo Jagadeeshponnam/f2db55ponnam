@@ -4,11 +4,19 @@ block content
   h1= title
   - var electricity = results;
   div(class="container-fluid")
-    each item,index in electricity 
+    each item,index in electricity
+     - let destination = `dispatch(\"/electricity/update?id=${item._id}\")` 
       div(class="row" ,onclick=`buy(${index})`)
         div(class="col-sm-2") #{item.Edistributor_Name}
         div(class="col-sm-2") #{item.electricity_gen}
         div(class="col-sm-2") #{item.elctricity_type}
+        
+      button.btn( class="btn-primary ml-1", onclick= destination) Update
+
+  script.
+        function dispatch(path){
+         window.location.href=path
+        }
 
   script. 
         function buy(price){
