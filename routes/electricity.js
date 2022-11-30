@@ -8,13 +8,6 @@ router.get('/', electricity_controlers.electricity_view_all_Page);
 /* GET detail electricity page */
 router.get('/detail', electricity_controlers.electricity_view_one_Page);
 
-/* GET create electricity page */
-router.get('/create', electricity_controlers.electricity_create_Page);
-
-/* GET delete electricity page */
-router.get('/delete', electricity_controlers.electricity_delete_Page);
-
-
 // redirect to login. 
 const secured = (req, res, next) => { 
     if (req.user){ 
@@ -26,5 +19,12 @@ const secured = (req, res, next) => {
 
 /* GET update electricity page */ 
 router.get('/update', secured, electricity_controlers.electricity_update_Page); 
+
+/* GET create electricity page */
+router.get('/create', secured, electricity_controlers.electricity_create_Page);
+
+/* GET delete electricity page */
+router.get('/delete', secured, electricity_controlers.electricity_delete_Page);
+
 
 module.exports = router;

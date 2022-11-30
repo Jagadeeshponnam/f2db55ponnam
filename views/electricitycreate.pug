@@ -4,13 +4,13 @@ block content
  form(id='electricityForm', action="/resource/electricity", method="POST")
   div.form-group
    label.electricityAttr(for='Edistributor_Name') Electricity Name
-   input#Edistributor_Name(type='String', name='Edistributor_Name')
+   input#Edistributor_Name(type='String', name='Edistributor_Name', minlength='3', maxlength='8')
   div.form-group
    label.electricityAttr(for='electricity_gen') Electricity gen
-   input#electricity_gen(type='number', name='electricity_gen', min='1', max='15')
+   input#electricity_gen(type='number', name='electricity_gen', min='1', max='5000')
   div.form-group
    label.electricityAttr(for='elctricity_type') Electricity type
-   input#elctricity_type(type='String', name='elctricity_type')
+   input#elctricity_type(type='String', name='elctricity_type' minlength='3', maxlength='8')
   input(type="submit")
  script.
   document.forms['electricityForm'].addEventListener('submit', (event) => {
