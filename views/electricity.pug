@@ -3,15 +3,21 @@ extends layout
 block content
   h1= title
   - var electricity = results;
+  - let d3 = `dispatch(\"/electricity/create\")`
+  button.btn( class="btn btn-secondary ml-1", onclick= d3) Create
   div(class="container-fluid")
     each item,index in electricity
-     - let destination = `dispatch(\"/electricity/update?id=${item._id}\")` 
+     - let destination = `dispatch(\"/electricity/update?id=${item._id}\")`
+     - let d1 = `dispatch(\"/electricity/detail?id=${item._id}\")`
+     - let d2 = `dispatch(\"/electricity/delete?id=${item._id}\")` 
       div(class="row" ,onclick=`buy(${index})`)
         div(class="col-sm-2") #{item.Edistributor_Name}
         div(class="col-sm-2") #{item.electricity_gen}
         div(class="col-sm-2") #{item.elctricity_type}
         
       button.btn( class="btn-primary ml-1", onclick= destination) Update
+      button.btn( class="btn btn-success ml-1", onclick= d1) Details
+      button.btn( class="btn btn-danger ml-1", onclick= d2) Delete
 
   script.
         function dispatch(path){
